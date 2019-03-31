@@ -1,2 +1,1 @@
-# First_Project
-Hai all!
+This is the spring boot and jsp project
