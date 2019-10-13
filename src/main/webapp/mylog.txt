@@ -1,0 +1,1986 @@
+2019-10-13 14:00:52 INFO  AnswerController:93 - This is /postanswer Page Log
+2019-10-13 14:00:52 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:00:52 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:00:52 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:00:52 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:00:52 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:00:52 DEBUG SQL:109 - 
+    select
+        answers0_.answerId as answerId1_0_0_,
+        answers0_.answerDescription as answerDe2_0_0_,
+        answers0_.date as date3_0_0_,
+        answers0_.employeeId as employee4_0_0_,
+        answers0_.questionId as question5_0_0_,
+        employee1_.employeeId as employee1_2_1_,
+        employee1_.employeeDesignation as employee2_2_1_,
+        employee1_.employeeLocation as employee3_2_1_,
+        employee1_.employeeName as employee4_2_1_,
+        employee1_.password as password5_2_1_,
+        employee1_.username as username6_2_1_,
+        questions2_.questionId as question1_3_2_,
+        questions2_.categoryId as category4_3_2_,
+        questions2_.date as date2_3_2_,
+        questions2_.employeeId as employee5_3_2_,
+        questions2_.questionDescription as question3_3_2_,
+        category3_.categoryId as category1_1_3_,
+        category3_.categoryName as category2_1_3_,
+        employee4_.employeeId as employee1_2_4_,
+        employee4_.employeeDesignation as employee2_2_4_,
+        employee4_.employeeLocation as employee3_2_4_,
+        employee4_.employeeName as employee4_2_4_,
+        employee4_.password as password5_2_4_,
+        employee4_.username as username6_2_4_ 
+    from
+        answers answers0_ 
+    left outer join
+        employee employee1_ 
+            on answers0_.employeeId=employee1_.employeeId 
+    left outer join
+        questions questions2_ 
+            on answers0_.questionId=questions2_.questionId 
+    left outer join
+        category category3_ 
+            on questions2_.categoryId=category3_.categoryId 
+    left outer join
+        employee employee4_ 
+            on questions2_.employeeId=employee4_.employeeId 
+    where
+        answers0_.answerId=?
+2019-10-13 14:00:52 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:00:52 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:00:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#3]
+2019-10-13 14:00:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#3]
+2019-10-13 14:00:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#111]
+2019-10-13 14:00:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#111]
+2019-10-13 14:00:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:00:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:00:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:00:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:00:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:00:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:00:52 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Answers#3
+2019-10-13 14:00:52 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:00:52 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:00:52 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:00:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#111], was: [com.vforum.model.Employee.answers#111] (uninitialized)
+2019-10-13 14:00:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#111], was: [com.vforum.model.Employee.questions#111] (uninitialized)
+2019-10-13 14:00:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:00:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:00:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:00:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:00:52 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 5 objects
+2019-10-13 14:00:52 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 6 collections
+2019-10-13 14:00:52 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:00:52 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=3, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=ekrvb;wer}
+2019-10-13 14:00:52 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:00:52 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=bbb, password=111, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=bbb, employeeId=111, employeeDesignation=bbb, username=bbb}
+2019-10-13 14:00:52 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:00:52 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:00:52 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:00:52 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:00:52 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:00:52 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:02:55 INFO  AnswerController:113 - This is /postanswer Page Log
+2019-10-13 14:02:55 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:02:55 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:02:55 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:02:55 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:02:55 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:02:55 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:02:55 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:02:55 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:02:55 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 1 updates, 0 deletions to 1 objects
+2019-10-13 14:02:55 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2019-10-13 14:02:55 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:02:55 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=3, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=ekrvb;wer}
+2019-10-13 14:02:55 DEBUG SQL:109 - 
+    update
+        answers 
+    set
+        answerDescription=?,
+        date=?,
+        employeeId=?,
+        questionId=? 
+    where
+        answerId=?
+2019-10-13 14:02:55 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:02:55 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:02:55 DEBUG JdbcCoordinatorImpl:201 - HHH000420: Closing un-released batch
+2019-10-13 14:02:55 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:02:55 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:02:55 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:02:55 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:02:55 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:02:55 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:02:55 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:02:55 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_,
+        questions0_.categoryId as category4_3_,
+        questions0_.date as date2_3_,
+        questions0_.employeeId as employee5_3_,
+        questions0_.questionDescription as question3_3_ 
+    from
+        questions questions0_
+2019-10-13 14:02:55 DEBUG Loader:952 - Result set row: 0
+2019-10-13 14:02:55 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Questions#2]
+2019-10-13 14:02:55 DEBUG Loader:952 - Result set row: 1
+2019-10-13 14:02:55 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Questions#3]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:02:55 DEBUG SQL:109 - 
+    select
+        category0_.categoryId as category1_1_0_,
+        category0_.categoryName as category2_1_0_ 
+    from
+        category category0_ 
+    where
+        category0_.categoryId=?
+2019-10-13 14:02:55 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:02:55 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:02:55 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Category#1
+2019-10-13 14:02:55 DEBUG SQL:109 - 
+    select
+        employee0_.employeeId as employee1_2_0_,
+        employee0_.employeeDesignation as employee2_2_0_,
+        employee0_.employeeLocation as employee3_2_0_,
+        employee0_.employeeName as employee4_2_0_,
+        employee0_.password as password5_2_0_,
+        employee0_.username as username6_2_0_ 
+    from
+        employee employee0_ 
+    where
+        employee0_.employeeId=?
+2019-10-13 14:02:55 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:02:55 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:02:55 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Employee#123
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#3]
+2019-10-13 14:02:55 DEBUG SQL:109 - 
+    select
+        category0_.categoryId as category1_1_0_,
+        category0_.categoryName as category2_1_0_ 
+    from
+        category category0_ 
+    where
+        category0_.categoryId=?
+2019-10-13 14:02:55 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:02:55 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#2]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#2]
+2019-10-13 14:02:55 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Category#2
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#3]
+2019-10-13 14:02:55 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:02:55 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:02:55 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:02:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:02:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#3], was: [com.vforum.model.Questions.answerId#3] (uninitialized)
+2019-10-13 14:02:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:02:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:02:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:02:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#2], was: [com.vforum.model.Category.questions#2] (uninitialized)
+2019-10-13 14:02:55 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 5 objects
+2019-10-13 14:02:55 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 6 collections
+2019-10-13 14:02:55 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:02:55 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=why this kolaveri?, questionId=3, category=com.vforum.model.Category#2, employee=com.vforum.model.Employee#123}
+2019-10-13 14:02:55 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:02:55 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:02:55 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:02:55 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=HR, categoryId=2}
+2019-10-13 14:02:55 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:02:55 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:02:55 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:02:55 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:02:55 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:02:55 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:02:55 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:02:55 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:02:55 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:02:55 DEBUG SQL:109 - 
+    select
+        answers0_.answerId as answerId1_0_,
+        answers0_.answerDescription as answerDe2_0_,
+        answers0_.date as date3_0_,
+        answers0_.employeeId as employee4_0_,
+        answers0_.questionId as question5_0_ 
+    from
+        answers answers0_
+2019-10-13 14:02:55 DEBUG Loader:952 - Result set row: 0
+2019-10-13 14:02:55 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Answers#2]
+2019-10-13 14:02:55 DEBUG Loader:952 - Result set row: 1
+2019-10-13 14:02:55 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Answers#3]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#2]
+2019-10-13 14:02:55 DEBUG SQL:109 - 
+    select
+        employee0_.employeeId as employee1_2_0_,
+        employee0_.employeeDesignation as employee2_2_0_,
+        employee0_.employeeLocation as employee3_2_0_,
+        employee0_.employeeName as employee4_2_0_,
+        employee0_.password as password5_2_0_,
+        employee0_.username as username6_2_0_ 
+    from
+        employee employee0_ 
+    where
+        employee0_.employeeId=?
+2019-10-13 14:02:55 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:02:55 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#111]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#111]
+2019-10-13 14:02:55 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Employee#111
+2019-10-13 14:02:55 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_0_,
+        questions0_.categoryId as category4_3_0_,
+        questions0_.date as date2_3_0_,
+        questions0_.employeeId as employee5_3_0_,
+        questions0_.questionDescription as question3_3_0_,
+        category1_.categoryId as category1_1_1_,
+        category1_.categoryName as category2_1_1_,
+        employee2_.employeeId as employee1_2_2_,
+        employee2_.employeeDesignation as employee2_2_2_,
+        employee2_.employeeLocation as employee3_2_2_,
+        employee2_.employeeName as employee4_2_2_,
+        employee2_.password as password5_2_2_,
+        employee2_.username as username6_2_2_ 
+    from
+        questions questions0_ 
+    left outer join
+        category category1_ 
+            on questions0_.categoryId=category1_.categoryId 
+    left outer join
+        employee employee2_ 
+            on questions0_.employeeId=employee2_.employeeId 
+    where
+        questions0_.questionId=?
+2019-10-13 14:02:55 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:02:55 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#3]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#3]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#2]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#2]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:02:55 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Questions#3
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#2]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#3]
+2019-10-13 14:02:55 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_0_,
+        questions0_.categoryId as category4_3_0_,
+        questions0_.date as date2_3_0_,
+        questions0_.employeeId as employee5_3_0_,
+        questions0_.questionDescription as question3_3_0_,
+        category1_.categoryId as category1_1_1_,
+        category1_.categoryName as category2_1_1_,
+        employee2_.employeeId as employee1_2_2_,
+        employee2_.employeeDesignation as employee2_2_2_,
+        employee2_.employeeLocation as employee3_2_2_,
+        employee2_.employeeName as employee4_2_2_,
+        employee2_.password as password5_2_2_,
+        employee2_.username as username6_2_2_ 
+    from
+        questions questions0_ 
+    left outer join
+        category category1_ 
+            on questions0_.categoryId=category1_.categoryId 
+    left outer join
+        employee employee2_ 
+            on questions0_.employeeId=employee2_.employeeId 
+    where
+        questions0_.questionId=?
+2019-10-13 14:02:55 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:02:55 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:02:55 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Questions#2
+2019-10-13 14:02:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#3]
+2019-10-13 14:02:55 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:02:55 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:02:55 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:02:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#111], was: [com.vforum.model.Employee.answers#111] (uninitialized)
+2019-10-13 14:02:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#111], was: [com.vforum.model.Employee.questions#111] (uninitialized)
+2019-10-13 14:02:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#3], was: [com.vforum.model.Questions.answerId#3] (uninitialized)
+2019-10-13 14:02:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#2], was: [com.vforum.model.Category.questions#2] (uninitialized)
+2019-10-13 14:02:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:02:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:02:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:02:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:02:55 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 8 objects
+2019-10-13 14:02:55 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 8 collections
+2019-10-13 14:02:55 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:02:55 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:02:55 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=bbb, password=111, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=bbb, employeeId=111, employeeDesignation=bbb, username=bbb}
+2019-10-13 14:02:55 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:02:55 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=2, date=2019-10-13, question=com.vforum.model.Questions#3, employee=com.vforum.model.Employee#111, answerDescription=erkfj}
+2019-10-13 14:02:55 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=HR, categoryId=2}
+2019-10-13 14:02:55 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:02:55 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=3, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=ekrvb;wer}
+2019-10-13 14:02:55 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=why this kolaveri?, questionId=3, category=com.vforum.model.Category#2, employee=com.vforum.model.Employee#123}
+2019-10-13 14:02:55 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:02:55 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:02:55 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:02:55 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:02:58 INFO  AnswerController:133 - This is /postanswer Page Log
+2019-10-13 14:02:58 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:02:58 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:02:58 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:02:58 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:02:58 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:02:58 DEBUG SQL:109 - 
+    select
+        answers0_.answerId as answerId1_0_0_,
+        answers0_.answerDescription as answerDe2_0_0_,
+        answers0_.date as date3_0_0_,
+        answers0_.employeeId as employee4_0_0_,
+        answers0_.questionId as question5_0_0_,
+        employee1_.employeeId as employee1_2_1_,
+        employee1_.employeeDesignation as employee2_2_1_,
+        employee1_.employeeLocation as employee3_2_1_,
+        employee1_.employeeName as employee4_2_1_,
+        employee1_.password as password5_2_1_,
+        employee1_.username as username6_2_1_,
+        questions2_.questionId as question1_3_2_,
+        questions2_.categoryId as category4_3_2_,
+        questions2_.date as date2_3_2_,
+        questions2_.employeeId as employee5_3_2_,
+        questions2_.questionDescription as question3_3_2_,
+        category3_.categoryId as category1_1_3_,
+        category3_.categoryName as category2_1_3_,
+        employee4_.employeeId as employee1_2_4_,
+        employee4_.employeeDesignation as employee2_2_4_,
+        employee4_.employeeLocation as employee3_2_4_,
+        employee4_.employeeName as employee4_2_4_,
+        employee4_.password as password5_2_4_,
+        employee4_.username as username6_2_4_ 
+    from
+        answers answers0_ 
+    left outer join
+        employee employee1_ 
+            on answers0_.employeeId=employee1_.employeeId 
+    left outer join
+        questions questions2_ 
+            on answers0_.questionId=questions2_.questionId 
+    left outer join
+        category category3_ 
+            on questions2_.categoryId=category3_.categoryId 
+    left outer join
+        employee employee4_ 
+            on questions2_.employeeId=employee4_.employeeId 
+    where
+        answers0_.answerId=?
+2019-10-13 14:02:58 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:02:58 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#3]
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#3]
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#111]
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#111]
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:02:58 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Answers#3
+2019-10-13 14:02:58 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:02:58 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:02:58 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:02:58 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#111], was: [com.vforum.model.Employee.answers#111] (uninitialized)
+2019-10-13 14:02:58 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#111], was: [com.vforum.model.Employee.questions#111] (uninitialized)
+2019-10-13 14:02:58 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:02:58 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:02:58 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:02:58 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:02:58 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 5 objects
+2019-10-13 14:02:58 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 6 collections
+2019-10-13 14:02:58 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:02:58 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=3, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=ekrvb;wer}
+2019-10-13 14:02:58 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:02:58 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=bbb, password=111, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=bbb, employeeId=111, employeeDesignation=bbb, username=bbb}
+2019-10-13 14:02:58 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:02:58 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:02:58 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:02:58 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:02:58 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:02:58 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:02:58 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:02:58 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:02:58 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:02:58 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:02:58 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:02:58 DEBUG SQL:109 - 
+    select
+        employee_.employeeId,
+        employee_.employeeDesignation as employee2_2_,
+        employee_.employeeLocation as employee3_2_,
+        employee_.employeeName as employee4_2_,
+        employee_.password as password5_2_,
+        employee_.username as username6_2_ 
+    from
+        employee employee_ 
+    where
+        employee_.employeeId=?
+2019-10-13 14:02:58 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:02:58 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:02:58 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:02:58 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 1 deletions to 1 objects
+2019-10-13 14:02:58 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2019-10-13 14:02:58 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:02:58 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=3, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=ekrvb;wer}
+2019-10-13 14:02:58 DEBUG SQL:109 - 
+    delete 
+    from
+        answers 
+    where
+        answerId=?
+2019-10-13 14:02:58 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:02:58 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:02:58 DEBUG JdbcCoordinatorImpl:201 - HHH000420: Closing un-released batch
+2019-10-13 14:02:58 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:02:58 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:02:58 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:02:58 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:02:58 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:02:58 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:02:58 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:02:58 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_,
+        questions0_.categoryId as category4_3_,
+        questions0_.date as date2_3_,
+        questions0_.employeeId as employee5_3_,
+        questions0_.questionDescription as question3_3_ 
+    from
+        questions questions0_
+2019-10-13 14:02:58 DEBUG Loader:952 - Result set row: 0
+2019-10-13 14:02:58 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Questions#2]
+2019-10-13 14:02:58 DEBUG Loader:952 - Result set row: 1
+2019-10-13 14:02:58 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Questions#3]
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:02:58 DEBUG SQL:109 - 
+    select
+        category0_.categoryId as category1_1_0_,
+        category0_.categoryName as category2_1_0_ 
+    from
+        category category0_ 
+    where
+        category0_.categoryId=?
+2019-10-13 14:02:58 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:02:58 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:02:58 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Category#1
+2019-10-13 14:02:58 DEBUG SQL:109 - 
+    select
+        employee0_.employeeId as employee1_2_0_,
+        employee0_.employeeDesignation as employee2_2_0_,
+        employee0_.employeeLocation as employee3_2_0_,
+        employee0_.employeeName as employee4_2_0_,
+        employee0_.password as password5_2_0_,
+        employee0_.username as username6_2_0_ 
+    from
+        employee employee0_ 
+    where
+        employee0_.employeeId=?
+2019-10-13 14:02:58 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:02:58 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:02:58 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Employee#123
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#3]
+2019-10-13 14:02:58 DEBUG SQL:109 - 
+    select
+        category0_.categoryId as category1_1_0_,
+        category0_.categoryName as category2_1_0_ 
+    from
+        category category0_ 
+    where
+        category0_.categoryId=?
+2019-10-13 14:02:58 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:02:58 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#2]
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#2]
+2019-10-13 14:02:58 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Category#2
+2019-10-13 14:02:58 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#3]
+2019-10-13 14:02:58 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:02:58 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:02:58 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:02:58 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:02:58 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#3], was: [com.vforum.model.Questions.answerId#3] (uninitialized)
+2019-10-13 14:02:58 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:02:58 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:02:58 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:02:58 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#2], was: [com.vforum.model.Category.questions#2] (uninitialized)
+2019-10-13 14:02:58 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 5 objects
+2019-10-13 14:02:58 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 6 collections
+2019-10-13 14:02:58 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:02:58 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=why this kolaveri?, questionId=3, category=com.vforum.model.Category#2, employee=com.vforum.model.Employee#123}
+2019-10-13 14:02:58 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:02:58 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:02:58 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:02:58 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=HR, categoryId=2}
+2019-10-13 14:02:58 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:02:58 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:02:58 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:02:58 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:02:58 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:02:59 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:02:59 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:02:59 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:02:59 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:02:59 DEBUG SQL:109 - 
+    select
+        answers0_.answerId as answerId1_0_,
+        answers0_.answerDescription as answerDe2_0_,
+        answers0_.date as date3_0_,
+        answers0_.employeeId as employee4_0_,
+        answers0_.questionId as question5_0_ 
+    from
+        answers answers0_
+2019-10-13 14:02:59 DEBUG Loader:952 - Result set row: 0
+2019-10-13 14:02:59 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Answers#2]
+2019-10-13 14:02:59 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#2]
+2019-10-13 14:02:59 DEBUG SQL:109 - 
+    select
+        employee0_.employeeId as employee1_2_0_,
+        employee0_.employeeDesignation as employee2_2_0_,
+        employee0_.employeeLocation as employee3_2_0_,
+        employee0_.employeeName as employee4_2_0_,
+        employee0_.password as password5_2_0_,
+        employee0_.username as username6_2_0_ 
+    from
+        employee employee0_ 
+    where
+        employee0_.employeeId=?
+2019-10-13 14:02:59 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:02:59 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:02:59 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#111]
+2019-10-13 14:02:59 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#111]
+2019-10-13 14:02:59 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Employee#111
+2019-10-13 14:02:59 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_0_,
+        questions0_.categoryId as category4_3_0_,
+        questions0_.date as date2_3_0_,
+        questions0_.employeeId as employee5_3_0_,
+        questions0_.questionDescription as question3_3_0_,
+        category1_.categoryId as category1_1_1_,
+        category1_.categoryName as category2_1_1_,
+        employee2_.employeeId as employee1_2_2_,
+        employee2_.employeeDesignation as employee2_2_2_,
+        employee2_.employeeLocation as employee3_2_2_,
+        employee2_.employeeName as employee4_2_2_,
+        employee2_.password as password5_2_2_,
+        employee2_.username as username6_2_2_ 
+    from
+        questions questions0_ 
+    left outer join
+        category category1_ 
+            on questions0_.categoryId=category1_.categoryId 
+    left outer join
+        employee employee2_ 
+            on questions0_.employeeId=employee2_.employeeId 
+    where
+        questions0_.questionId=?
+2019-10-13 14:02:59 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:02:59 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:02:59 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#3]
+2019-10-13 14:02:59 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#3]
+2019-10-13 14:02:59 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#2]
+2019-10-13 14:02:59 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#2]
+2019-10-13 14:02:59 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:02:59 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:02:59 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Questions#3
+2019-10-13 14:02:59 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#2]
+2019-10-13 14:02:59 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:02:59 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:02:59 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:02:59 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#111], was: [com.vforum.model.Employee.answers#111] (uninitialized)
+2019-10-13 14:02:59 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#111], was: [com.vforum.model.Employee.questions#111] (uninitialized)
+2019-10-13 14:02:59 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#3], was: [com.vforum.model.Questions.answerId#3] (uninitialized)
+2019-10-13 14:02:59 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#2], was: [com.vforum.model.Category.questions#2] (uninitialized)
+2019-10-13 14:02:59 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:02:59 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:02:59 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 5 objects
+2019-10-13 14:02:59 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 6 collections
+2019-10-13 14:02:59 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:02:59 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=why this kolaveri?, questionId=3, category=com.vforum.model.Category#2, employee=com.vforum.model.Employee#123}
+2019-10-13 14:02:59 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:02:59 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=bbb, password=111, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=bbb, employeeId=111, employeeDesignation=bbb, username=bbb}
+2019-10-13 14:02:59 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=2, date=2019-10-13, question=com.vforum.model.Questions#3, employee=com.vforum.model.Employee#111, answerDescription=erkfj}
+2019-10-13 14:02:59 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=HR, categoryId=2}
+2019-10-13 14:02:59 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:02:59 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:02:59 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:02:59 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:04:42 DEBUG SessionFactoryImpl:1339 - HHH000031: Closing
+2019-10-13 14:04:42 DEBUG BootstrapServiceRegistryImpl:308 - Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
+2019-10-13 14:04:42 DEBUG AbstractServiceRegistryImpl:406 - Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+2019-10-13 14:04:42 DEBUG SessionFactoryImpl:1339 - HHH000031: Closing
+2019-10-13 14:04:42 DEBUG BootstrapServiceRegistryImpl:308 - Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
+2019-10-13 14:04:42 DEBUG AbstractServiceRegistryImpl:406 - Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+2019-10-13 14:05:46 INFO  AnswerController:44 - This is /postanswer Page Log
+2019-10-13 14:05:46 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:05:46 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:05:46 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:05:46 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:05:46 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:05:46 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_0_,
+        questions0_.categoryId as category4_3_0_,
+        questions0_.date as date2_3_0_,
+        questions0_.employeeId as employee5_3_0_,
+        questions0_.questionDescription as question3_3_0_,
+        category1_.categoryId as category1_1_1_,
+        category1_.categoryName as category2_1_1_,
+        employee2_.employeeId as employee1_2_2_,
+        employee2_.employeeDesignation as employee2_2_2_,
+        employee2_.employeeLocation as employee3_2_2_,
+        employee2_.employeeName as employee4_2_2_,
+        employee2_.password as password5_2_2_,
+        employee2_.username as username6_2_2_ 
+    from
+        questions questions0_ 
+    left outer join
+        category category1_ 
+            on questions0_.categoryId=category1_.categoryId 
+    left outer join
+        employee employee2_ 
+            on questions0_.employeeId=employee2_.employeeId 
+    where
+        questions0_.questionId=?
+2019-10-13 14:05:46 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:05:46 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:05:46 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:05:46 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:05:46 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:05:46 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:05:46 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:05:46 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:05:46 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Questions#2
+2019-10-13 14:05:46 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:05:46 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:05:46 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:05:46 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:05:46 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:05:46 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:05:46 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:05:46 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 3 objects
+2019-10-13 14:05:46 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 4 collections
+2019-10-13 14:05:46 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:05:46 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:05:46 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:05:46 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:05:46 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:05:46 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:05:46 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:05:46 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:05:46 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:05:46 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:05:46 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:05:46 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:05:46 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:05:46 DEBUG SQL:109 - 
+    select
+        employee0_.employeeId as employee1_2_0_,
+        employee0_.employeeDesignation as employee2_2_0_,
+        employee0_.employeeLocation as employee3_2_0_,
+        employee0_.employeeName as employee4_2_0_,
+        employee0_.password as password5_2_0_,
+        employee0_.username as username6_2_0_ 
+    from
+        employee employee0_ 
+    where
+        employee0_.employeeId=?
+2019-10-13 14:05:46 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:05:46 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:05:46 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#111]
+2019-10-13 14:05:46 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#111]
+2019-10-13 14:05:46 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Employee#111
+2019-10-13 14:05:46 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:05:46 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:05:46 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:05:46 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#111], was: [com.vforum.model.Employee.answers#111] (uninitialized)
+2019-10-13 14:05:46 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#111], was: [com.vforum.model.Employee.questions#111] (uninitialized)
+2019-10-13 14:05:46 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2019-10-13 14:05:46 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 2 collections
+2019-10-13 14:05:46 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:05:46 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=bbb, password=111, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=bbb, employeeId=111, employeeDesignation=bbb, username=bbb}
+2019-10-13 14:05:46 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:05:46 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:05:46 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:05:46 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:05:52 INFO  AnswerController:71 - This is /addanswer Page Log
+2019-10-13 14:05:52 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:05:52 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:05:52 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:05:52 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:05:52 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:05:52 DEBUG ActionQueue:196 - Executing identity-insert immediately
+2019-10-13 14:05:52 DEBUG SQL:109 - 
+    select
+        employee_.employeeId,
+        employee_.employeeDesignation as employee2_2_,
+        employee_.employeeLocation as employee3_2_,
+        employee_.employeeName as employee4_2_,
+        employee_.password as password5_2_,
+        employee_.username as username6_2_ 
+    from
+        employee employee_ 
+    where
+        employee_.employeeId=?
+2019-10-13 14:05:52 DEBUG SQL:109 - 
+    insert 
+    into
+        answers
+        (answerDescription, date, employeeId, questionId) 
+    values
+        (?, ?, ?, ?)
+2019-10-13 14:05:52 DEBUG IdentifierGeneratorHelper:94 - Natively generated identity: 4
+2019-10-13 14:05:52 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:05:52 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:05:52 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:05:52 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2019-10-13 14:05:52 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2019-10-13 14:05:52 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:05:52 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=4, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=kahferer}
+2019-10-13 14:05:52 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:05:52 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:05:52 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:05:52 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:05:52 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:05:52 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:05:52 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:05:52 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:05:52 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:05:52 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_,
+        questions0_.categoryId as category4_3_,
+        questions0_.date as date2_3_,
+        questions0_.employeeId as employee5_3_,
+        questions0_.questionDescription as question3_3_ 
+    from
+        questions questions0_
+2019-10-13 14:05:52 DEBUG Loader:952 - Result set row: 0
+2019-10-13 14:05:52 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Questions#2]
+2019-10-13 14:05:52 DEBUG Loader:952 - Result set row: 1
+2019-10-13 14:05:52 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Questions#3]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:05:52 DEBUG SQL:109 - 
+    select
+        category0_.categoryId as category1_1_0_,
+        category0_.categoryName as category2_1_0_ 
+    from
+        category category0_ 
+    where
+        category0_.categoryId=?
+2019-10-13 14:05:52 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:05:52 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:05:52 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Category#1
+2019-10-13 14:05:52 DEBUG SQL:109 - 
+    select
+        employee0_.employeeId as employee1_2_0_,
+        employee0_.employeeDesignation as employee2_2_0_,
+        employee0_.employeeLocation as employee3_2_0_,
+        employee0_.employeeName as employee4_2_0_,
+        employee0_.password as password5_2_0_,
+        employee0_.username as username6_2_0_ 
+    from
+        employee employee0_ 
+    where
+        employee0_.employeeId=?
+2019-10-13 14:05:52 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:05:52 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:05:52 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Employee#123
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#3]
+2019-10-13 14:05:52 DEBUG SQL:109 - 
+    select
+        category0_.categoryId as category1_1_0_,
+        category0_.categoryName as category2_1_0_ 
+    from
+        category category0_ 
+    where
+        category0_.categoryId=?
+2019-10-13 14:05:52 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:05:52 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#2]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#2]
+2019-10-13 14:05:52 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Category#2
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#3]
+2019-10-13 14:05:52 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:05:52 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:05:52 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:05:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:05:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#3], was: [com.vforum.model.Questions.answerId#3] (uninitialized)
+2019-10-13 14:05:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:05:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:05:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:05:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#2], was: [com.vforum.model.Category.questions#2] (uninitialized)
+2019-10-13 14:05:52 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 5 objects
+2019-10-13 14:05:52 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 6 collections
+2019-10-13 14:05:52 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:05:52 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=why this kolaveri?, questionId=3, category=com.vforum.model.Category#2, employee=com.vforum.model.Employee#123}
+2019-10-13 14:05:52 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:05:52 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:05:52 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:05:52 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=HR, categoryId=2}
+2019-10-13 14:05:52 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:05:52 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:05:52 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:05:52 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:05:52 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:05:52 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:05:52 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:05:52 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:05:52 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:05:52 DEBUG SQL:109 - 
+    select
+        answers0_.answerId as answerId1_0_,
+        answers0_.answerDescription as answerDe2_0_,
+        answers0_.date as date3_0_,
+        answers0_.employeeId as employee4_0_,
+        answers0_.questionId as question5_0_ 
+    from
+        answers answers0_
+2019-10-13 14:05:52 DEBUG Loader:952 - Result set row: 0
+2019-10-13 14:05:52 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Answers#2]
+2019-10-13 14:05:52 DEBUG Loader:952 - Result set row: 1
+2019-10-13 14:05:52 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Answers#4]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#2]
+2019-10-13 14:05:52 DEBUG SQL:109 - 
+    select
+        employee0_.employeeId as employee1_2_0_,
+        employee0_.employeeDesignation as employee2_2_0_,
+        employee0_.employeeLocation as employee3_2_0_,
+        employee0_.employeeName as employee4_2_0_,
+        employee0_.password as password5_2_0_,
+        employee0_.username as username6_2_0_ 
+    from
+        employee employee0_ 
+    where
+        employee0_.employeeId=?
+2019-10-13 14:05:52 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:05:52 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#111]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#111]
+2019-10-13 14:05:52 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Employee#111
+2019-10-13 14:05:52 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_0_,
+        questions0_.categoryId as category4_3_0_,
+        questions0_.date as date2_3_0_,
+        questions0_.employeeId as employee5_3_0_,
+        questions0_.questionDescription as question3_3_0_,
+        category1_.categoryId as category1_1_1_,
+        category1_.categoryName as category2_1_1_,
+        employee2_.employeeId as employee1_2_2_,
+        employee2_.employeeDesignation as employee2_2_2_,
+        employee2_.employeeLocation as employee3_2_2_,
+        employee2_.employeeName as employee4_2_2_,
+        employee2_.password as password5_2_2_,
+        employee2_.username as username6_2_2_ 
+    from
+        questions questions0_ 
+    left outer join
+        category category1_ 
+            on questions0_.categoryId=category1_.categoryId 
+    left outer join
+        employee employee2_ 
+            on questions0_.employeeId=employee2_.employeeId 
+    where
+        questions0_.questionId=?
+2019-10-13 14:05:52 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:05:52 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#3]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#3]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#2]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#2]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:05:52 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Questions#3
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#2]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#4]
+2019-10-13 14:05:52 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_0_,
+        questions0_.categoryId as category4_3_0_,
+        questions0_.date as date2_3_0_,
+        questions0_.employeeId as employee5_3_0_,
+        questions0_.questionDescription as question3_3_0_,
+        category1_.categoryId as category1_1_1_,
+        category1_.categoryName as category2_1_1_,
+        employee2_.employeeId as employee1_2_2_,
+        employee2_.employeeDesignation as employee2_2_2_,
+        employee2_.employeeLocation as employee3_2_2_,
+        employee2_.employeeName as employee4_2_2_,
+        employee2_.password as password5_2_2_,
+        employee2_.username as username6_2_2_ 
+    from
+        questions questions0_ 
+    left outer join
+        category category1_ 
+            on questions0_.categoryId=category1_.categoryId 
+    left outer join
+        employee employee2_ 
+            on questions0_.employeeId=employee2_.employeeId 
+    where
+        questions0_.questionId=?
+2019-10-13 14:05:52 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:05:52 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:05:52 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Questions#2
+2019-10-13 14:05:52 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#4]
+2019-10-13 14:05:52 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:05:52 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:05:52 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:05:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#111], was: [com.vforum.model.Employee.answers#111] (uninitialized)
+2019-10-13 14:05:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#111], was: [com.vforum.model.Employee.questions#111] (uninitialized)
+2019-10-13 14:05:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#3], was: [com.vforum.model.Questions.answerId#3] (uninitialized)
+2019-10-13 14:05:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#2], was: [com.vforum.model.Category.questions#2] (uninitialized)
+2019-10-13 14:05:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:05:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:05:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:05:52 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:05:52 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 8 objects
+2019-10-13 14:05:52 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 8 collections
+2019-10-13 14:05:52 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:05:52 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:05:52 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=bbb, password=111, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=bbb, employeeId=111, employeeDesignation=bbb, username=bbb}
+2019-10-13 14:05:52 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:05:52 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=2, date=2019-10-13, question=com.vforum.model.Questions#3, employee=com.vforum.model.Employee#111, answerDescription=erkfj}
+2019-10-13 14:05:52 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=HR, categoryId=2}
+2019-10-13 14:05:52 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:05:52 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=why this kolaveri?, questionId=3, category=com.vforum.model.Category#2, employee=com.vforum.model.Employee#123}
+2019-10-13 14:05:52 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=4, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=kahferer}
+2019-10-13 14:05:52 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:05:52 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:05:52 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:05:52 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:05:55 INFO  AnswerController:93 - This is /editanswer Page Log
+2019-10-13 14:05:55 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:05:55 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:05:55 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:05:55 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:05:55 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:05:55 DEBUG SQL:109 - 
+    select
+        answers0_.answerId as answerId1_0_0_,
+        answers0_.answerDescription as answerDe2_0_0_,
+        answers0_.date as date3_0_0_,
+        answers0_.employeeId as employee4_0_0_,
+        answers0_.questionId as question5_0_0_,
+        employee1_.employeeId as employee1_2_1_,
+        employee1_.employeeDesignation as employee2_2_1_,
+        employee1_.employeeLocation as employee3_2_1_,
+        employee1_.employeeName as employee4_2_1_,
+        employee1_.password as password5_2_1_,
+        employee1_.username as username6_2_1_,
+        questions2_.questionId as question1_3_2_,
+        questions2_.categoryId as category4_3_2_,
+        questions2_.date as date2_3_2_,
+        questions2_.employeeId as employee5_3_2_,
+        questions2_.questionDescription as question3_3_2_,
+        category3_.categoryId as category1_1_3_,
+        category3_.categoryName as category2_1_3_,
+        employee4_.employeeId as employee1_2_4_,
+        employee4_.employeeDesignation as employee2_2_4_,
+        employee4_.employeeLocation as employee3_2_4_,
+        employee4_.employeeName as employee4_2_4_,
+        employee4_.password as password5_2_4_,
+        employee4_.username as username6_2_4_ 
+    from
+        answers answers0_ 
+    left outer join
+        employee employee1_ 
+            on answers0_.employeeId=employee1_.employeeId 
+    left outer join
+        questions questions2_ 
+            on answers0_.questionId=questions2_.questionId 
+    left outer join
+        category category3_ 
+            on questions2_.categoryId=category3_.categoryId 
+    left outer join
+        employee employee4_ 
+            on questions2_.employeeId=employee4_.employeeId 
+    where
+        answers0_.answerId=?
+2019-10-13 14:05:55 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:05:55 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:05:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#4]
+2019-10-13 14:05:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#4]
+2019-10-13 14:05:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#111]
+2019-10-13 14:05:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#111]
+2019-10-13 14:05:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:05:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:05:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:05:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:05:55 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:05:55 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:05:55 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Answers#4
+2019-10-13 14:05:55 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:05:55 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:05:55 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:05:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#111], was: [com.vforum.model.Employee.answers#111] (uninitialized)
+2019-10-13 14:05:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#111], was: [com.vforum.model.Employee.questions#111] (uninitialized)
+2019-10-13 14:05:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:05:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:05:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:05:55 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:05:55 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 5 objects
+2019-10-13 14:05:55 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 6 collections
+2019-10-13 14:05:55 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:05:55 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:05:55 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=4, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=kahferer}
+2019-10-13 14:05:55 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=bbb, password=111, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=bbb, employeeId=111, employeeDesignation=bbb, username=bbb}
+2019-10-13 14:05:55 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:05:55 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:05:55 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:05:55 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:05:55 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:05:55 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:06:01 INFO  AnswerController:113 - This is /postanswer Page Log
+2019-10-13 14:06:01 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:06:01 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:06:01 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:06:01 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:06:01 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:06:01 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:06:01 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:06:01 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:06:01 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 1 updates, 0 deletions to 1 objects
+2019-10-13 14:06:01 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2019-10-13 14:06:01 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:06:01 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=4, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=rkjleerop367}
+2019-10-13 14:06:01 DEBUG SQL:109 - 
+    update
+        answers 
+    set
+        answerDescription=?,
+        date=?,
+        employeeId=?,
+        questionId=? 
+    where
+        answerId=?
+2019-10-13 14:06:02 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:06:02 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:06:02 DEBUG JdbcCoordinatorImpl:201 - HHH000420: Closing un-released batch
+2019-10-13 14:06:02 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:06:02 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:06:02 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:06:02 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:06:02 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:06:02 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:06:02 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:06:02 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_,
+        questions0_.categoryId as category4_3_,
+        questions0_.date as date2_3_,
+        questions0_.employeeId as employee5_3_,
+        questions0_.questionDescription as question3_3_ 
+    from
+        questions questions0_
+2019-10-13 14:06:02 DEBUG Loader:952 - Result set row: 0
+2019-10-13 14:06:02 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Questions#2]
+2019-10-13 14:06:02 DEBUG Loader:952 - Result set row: 1
+2019-10-13 14:06:02 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Questions#3]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:06:02 DEBUG SQL:109 - 
+    select
+        category0_.categoryId as category1_1_0_,
+        category0_.categoryName as category2_1_0_ 
+    from
+        category category0_ 
+    where
+        category0_.categoryId=?
+2019-10-13 14:06:02 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:02 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:06:02 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Category#1
+2019-10-13 14:06:02 DEBUG SQL:109 - 
+    select
+        employee0_.employeeId as employee1_2_0_,
+        employee0_.employeeDesignation as employee2_2_0_,
+        employee0_.employeeLocation as employee3_2_0_,
+        employee0_.employeeName as employee4_2_0_,
+        employee0_.password as password5_2_0_,
+        employee0_.username as username6_2_0_ 
+    from
+        employee employee0_ 
+    where
+        employee0_.employeeId=?
+2019-10-13 14:06:02 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:02 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:06:02 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Employee#123
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#3]
+2019-10-13 14:06:02 DEBUG SQL:109 - 
+    select
+        category0_.categoryId as category1_1_0_,
+        category0_.categoryName as category2_1_0_ 
+    from
+        category category0_ 
+    where
+        category0_.categoryId=?
+2019-10-13 14:06:02 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:02 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#2]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#2]
+2019-10-13 14:06:02 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Category#2
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#3]
+2019-10-13 14:06:02 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:06:02 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:06:02 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:06:02 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:06:02 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#3], was: [com.vforum.model.Questions.answerId#3] (uninitialized)
+2019-10-13 14:06:02 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:06:02 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:06:02 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:06:02 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#2], was: [com.vforum.model.Category.questions#2] (uninitialized)
+2019-10-13 14:06:02 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 5 objects
+2019-10-13 14:06:02 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 6 collections
+2019-10-13 14:06:02 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:06:02 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=why this kolaveri?, questionId=3, category=com.vforum.model.Category#2, employee=com.vforum.model.Employee#123}
+2019-10-13 14:06:02 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:06:02 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:06:02 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:06:02 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=HR, categoryId=2}
+2019-10-13 14:06:02 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:06:02 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:06:02 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:06:02 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:06:02 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:06:02 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:06:02 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:06:02 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:06:02 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:06:02 DEBUG SQL:109 - 
+    select
+        answers0_.answerId as answerId1_0_,
+        answers0_.answerDescription as answerDe2_0_,
+        answers0_.date as date3_0_,
+        answers0_.employeeId as employee4_0_,
+        answers0_.questionId as question5_0_ 
+    from
+        answers answers0_
+2019-10-13 14:06:02 DEBUG Loader:952 - Result set row: 0
+2019-10-13 14:06:02 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Answers#2]
+2019-10-13 14:06:02 DEBUG Loader:952 - Result set row: 1
+2019-10-13 14:06:02 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Answers#4]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#2]
+2019-10-13 14:06:02 DEBUG SQL:109 - 
+    select
+        employee0_.employeeId as employee1_2_0_,
+        employee0_.employeeDesignation as employee2_2_0_,
+        employee0_.employeeLocation as employee3_2_0_,
+        employee0_.employeeName as employee4_2_0_,
+        employee0_.password as password5_2_0_,
+        employee0_.username as username6_2_0_ 
+    from
+        employee employee0_ 
+    where
+        employee0_.employeeId=?
+2019-10-13 14:06:02 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:02 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#111]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#111]
+2019-10-13 14:06:02 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Employee#111
+2019-10-13 14:06:02 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_0_,
+        questions0_.categoryId as category4_3_0_,
+        questions0_.date as date2_3_0_,
+        questions0_.employeeId as employee5_3_0_,
+        questions0_.questionDescription as question3_3_0_,
+        category1_.categoryId as category1_1_1_,
+        category1_.categoryName as category2_1_1_,
+        employee2_.employeeId as employee1_2_2_,
+        employee2_.employeeDesignation as employee2_2_2_,
+        employee2_.employeeLocation as employee3_2_2_,
+        employee2_.employeeName as employee4_2_2_,
+        employee2_.password as password5_2_2_,
+        employee2_.username as username6_2_2_ 
+    from
+        questions questions0_ 
+    left outer join
+        category category1_ 
+            on questions0_.categoryId=category1_.categoryId 
+    left outer join
+        employee employee2_ 
+            on questions0_.employeeId=employee2_.employeeId 
+    where
+        questions0_.questionId=?
+2019-10-13 14:06:02 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:02 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#3]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#3]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#2]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#2]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:06:02 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Questions#3
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#2]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#4]
+2019-10-13 14:06:02 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_0_,
+        questions0_.categoryId as category4_3_0_,
+        questions0_.date as date2_3_0_,
+        questions0_.employeeId as employee5_3_0_,
+        questions0_.questionDescription as question3_3_0_,
+        category1_.categoryId as category1_1_1_,
+        category1_.categoryName as category2_1_1_,
+        employee2_.employeeId as employee1_2_2_,
+        employee2_.employeeDesignation as employee2_2_2_,
+        employee2_.employeeLocation as employee3_2_2_,
+        employee2_.employeeName as employee4_2_2_,
+        employee2_.password as password5_2_2_,
+        employee2_.username as username6_2_2_ 
+    from
+        questions questions0_ 
+    left outer join
+        category category1_ 
+            on questions0_.categoryId=category1_.categoryId 
+    left outer join
+        employee employee2_ 
+            on questions0_.employeeId=employee2_.employeeId 
+    where
+        questions0_.questionId=?
+2019-10-13 14:06:02 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:02 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:06:02 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Questions#2
+2019-10-13 14:06:02 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#4]
+2019-10-13 14:06:02 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:06:02 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:06:02 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:06:02 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#111], was: [com.vforum.model.Employee.answers#111] (uninitialized)
+2019-10-13 14:06:02 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#111], was: [com.vforum.model.Employee.questions#111] (uninitialized)
+2019-10-13 14:06:02 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#3], was: [com.vforum.model.Questions.answerId#3] (uninitialized)
+2019-10-13 14:06:02 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#2], was: [com.vforum.model.Category.questions#2] (uninitialized)
+2019-10-13 14:06:02 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:06:02 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:06:02 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:06:02 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:06:02 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 8 objects
+2019-10-13 14:06:02 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 8 collections
+2019-10-13 14:06:02 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:06:02 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:06:02 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=bbb, password=111, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=bbb, employeeId=111, employeeDesignation=bbb, username=bbb}
+2019-10-13 14:06:02 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:06:02 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=2, date=2019-10-13, question=com.vforum.model.Questions#3, employee=com.vforum.model.Employee#111, answerDescription=erkfj}
+2019-10-13 14:06:02 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=HR, categoryId=2}
+2019-10-13 14:06:02 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:06:02 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=why this kolaveri?, questionId=3, category=com.vforum.model.Category#2, employee=com.vforum.model.Employee#123}
+2019-10-13 14:06:02 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=4, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=rkjleerop367}
+2019-10-13 14:06:02 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:06:02 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:06:02 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:06:02 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:06:07 INFO  AnswerController:44 - This is /postanswer Page Log
+2019-10-13 14:06:07 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:06:07 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:06:07 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:06:07 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:06:07 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:06:07 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_0_,
+        questions0_.categoryId as category4_3_0_,
+        questions0_.date as date2_3_0_,
+        questions0_.employeeId as employee5_3_0_,
+        questions0_.questionDescription as question3_3_0_,
+        category1_.categoryId as category1_1_1_,
+        category1_.categoryName as category2_1_1_,
+        employee2_.employeeId as employee1_2_2_,
+        employee2_.employeeDesignation as employee2_2_2_,
+        employee2_.employeeLocation as employee3_2_2_,
+        employee2_.employeeName as employee4_2_2_,
+        employee2_.password as password5_2_2_,
+        employee2_.username as username6_2_2_ 
+    from
+        questions questions0_ 
+    left outer join
+        category category1_ 
+            on questions0_.categoryId=category1_.categoryId 
+    left outer join
+        employee employee2_ 
+            on questions0_.employeeId=employee2_.employeeId 
+    where
+        questions0_.questionId=?
+2019-10-13 14:06:07 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:07 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:07 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:06:07 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:06:07 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:06:07 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:06:07 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:06:07 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:06:07 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Questions#2
+2019-10-13 14:06:07 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:06:07 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:06:07 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:06:07 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:06:07 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:06:07 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:06:07 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:06:07 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 3 objects
+2019-10-13 14:06:07 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 4 collections
+2019-10-13 14:06:07 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:06:07 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:06:07 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:06:07 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:06:07 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:06:07 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:06:07 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:06:07 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:06:07 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:06:07 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:06:07 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:06:07 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:06:07 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:06:07 DEBUG SQL:109 - 
+    select
+        employee0_.employeeId as employee1_2_0_,
+        employee0_.employeeDesignation as employee2_2_0_,
+        employee0_.employeeLocation as employee3_2_0_,
+        employee0_.employeeName as employee4_2_0_,
+        employee0_.password as password5_2_0_,
+        employee0_.username as username6_2_0_ 
+    from
+        employee employee0_ 
+    where
+        employee0_.employeeId=?
+2019-10-13 14:06:07 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:07 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:07 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#111]
+2019-10-13 14:06:07 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#111]
+2019-10-13 14:06:07 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Employee#111
+2019-10-13 14:06:07 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:06:07 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:06:07 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:06:07 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#111], was: [com.vforum.model.Employee.answers#111] (uninitialized)
+2019-10-13 14:06:07 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#111], was: [com.vforum.model.Employee.questions#111] (uninitialized)
+2019-10-13 14:06:07 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2019-10-13 14:06:07 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 2 collections
+2019-10-13 14:06:07 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:06:07 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=bbb, password=111, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=bbb, employeeId=111, employeeDesignation=bbb, username=bbb}
+2019-10-13 14:06:07 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:06:07 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:06:07 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:06:07 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:06:11 INFO  AnswerController:71 - This is /addanswer Page Log
+2019-10-13 14:06:11 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:06:11 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:06:11 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:06:11 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:06:11 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:06:11 DEBUG ActionQueue:196 - Executing identity-insert immediately
+2019-10-13 14:06:11 DEBUG SQL:109 - 
+    select
+        employee_.employeeId,
+        employee_.employeeDesignation as employee2_2_,
+        employee_.employeeLocation as employee3_2_,
+        employee_.employeeName as employee4_2_,
+        employee_.password as password5_2_,
+        employee_.username as username6_2_ 
+    from
+        employee employee_ 
+    where
+        employee_.employeeId=?
+2019-10-13 14:06:11 DEBUG SQL:109 - 
+    insert 
+    into
+        answers
+        (answerDescription, date, employeeId, questionId) 
+    values
+        (?, ?, ?, ?)
+2019-10-13 14:06:11 DEBUG IdentifierGeneratorHelper:94 - Natively generated identity: 5
+2019-10-13 14:06:11 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:06:11 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:06:11 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:06:11 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2019-10-13 14:06:11 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2019-10-13 14:06:11 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=5, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=dlkcjs}
+2019-10-13 14:06:11 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:06:11 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:06:11 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:06:11 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:06:11 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:06:11 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:06:11 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:06:11 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:06:11 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:06:11 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_,
+        questions0_.categoryId as category4_3_,
+        questions0_.date as date2_3_,
+        questions0_.employeeId as employee5_3_,
+        questions0_.questionDescription as question3_3_ 
+    from
+        questions questions0_
+2019-10-13 14:06:11 DEBUG Loader:952 - Result set row: 0
+2019-10-13 14:06:11 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Questions#2]
+2019-10-13 14:06:11 DEBUG Loader:952 - Result set row: 1
+2019-10-13 14:06:11 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Questions#3]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:06:11 DEBUG SQL:109 - 
+    select
+        category0_.categoryId as category1_1_0_,
+        category0_.categoryName as category2_1_0_ 
+    from
+        category category0_ 
+    where
+        category0_.categoryId=?
+2019-10-13 14:06:11 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:11 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:06:11 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Category#1
+2019-10-13 14:06:11 DEBUG SQL:109 - 
+    select
+        employee0_.employeeId as employee1_2_0_,
+        employee0_.employeeDesignation as employee2_2_0_,
+        employee0_.employeeLocation as employee3_2_0_,
+        employee0_.employeeName as employee4_2_0_,
+        employee0_.password as password5_2_0_,
+        employee0_.username as username6_2_0_ 
+    from
+        employee employee0_ 
+    where
+        employee0_.employeeId=?
+2019-10-13 14:06:11 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:11 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:06:11 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Employee#123
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#3]
+2019-10-13 14:06:11 DEBUG SQL:109 - 
+    select
+        category0_.categoryId as category1_1_0_,
+        category0_.categoryName as category2_1_0_ 
+    from
+        category category0_ 
+    where
+        category0_.categoryId=?
+2019-10-13 14:06:11 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:11 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#2]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#2]
+2019-10-13 14:06:11 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Category#2
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#3]
+2019-10-13 14:06:11 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:06:11 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:06:11 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:06:11 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:06:11 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#3], was: [com.vforum.model.Questions.answerId#3] (uninitialized)
+2019-10-13 14:06:11 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:06:11 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:06:11 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:06:11 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#2], was: [com.vforum.model.Category.questions#2] (uninitialized)
+2019-10-13 14:06:11 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 5 objects
+2019-10-13 14:06:11 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 6 collections
+2019-10-13 14:06:11 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=why this kolaveri?, questionId=3, category=com.vforum.model.Category#2, employee=com.vforum.model.Employee#123}
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=HR, categoryId=2}
+2019-10-13 14:06:11 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:06:11 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:06:11 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:06:11 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:06:11 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:06:11 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:06:11 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:06:11 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:06:11 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:06:11 DEBUG SQL:109 - 
+    select
+        answers0_.answerId as answerId1_0_,
+        answers0_.answerDescription as answerDe2_0_,
+        answers0_.date as date3_0_,
+        answers0_.employeeId as employee4_0_,
+        answers0_.questionId as question5_0_ 
+    from
+        answers answers0_
+2019-10-13 14:06:11 DEBUG Loader:952 - Result set row: 0
+2019-10-13 14:06:11 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Answers#2]
+2019-10-13 14:06:11 DEBUG Loader:952 - Result set row: 1
+2019-10-13 14:06:11 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Answers#4]
+2019-10-13 14:06:11 DEBUG Loader:952 - Result set row: 2
+2019-10-13 14:06:11 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Answers#5]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#2]
+2019-10-13 14:06:11 DEBUG SQL:109 - 
+    select
+        employee0_.employeeId as employee1_2_0_,
+        employee0_.employeeDesignation as employee2_2_0_,
+        employee0_.employeeLocation as employee3_2_0_,
+        employee0_.employeeName as employee4_2_0_,
+        employee0_.password as password5_2_0_,
+        employee0_.username as username6_2_0_ 
+    from
+        employee employee0_ 
+    where
+        employee0_.employeeId=?
+2019-10-13 14:06:11 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:11 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#111]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#111]
+2019-10-13 14:06:11 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Employee#111
+2019-10-13 14:06:11 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_0_,
+        questions0_.categoryId as category4_3_0_,
+        questions0_.date as date2_3_0_,
+        questions0_.employeeId as employee5_3_0_,
+        questions0_.questionDescription as question3_3_0_,
+        category1_.categoryId as category1_1_1_,
+        category1_.categoryName as category2_1_1_,
+        employee2_.employeeId as employee1_2_2_,
+        employee2_.employeeDesignation as employee2_2_2_,
+        employee2_.employeeLocation as employee3_2_2_,
+        employee2_.employeeName as employee4_2_2_,
+        employee2_.password as password5_2_2_,
+        employee2_.username as username6_2_2_ 
+    from
+        questions questions0_ 
+    left outer join
+        category category1_ 
+            on questions0_.categoryId=category1_.categoryId 
+    left outer join
+        employee employee2_ 
+            on questions0_.employeeId=employee2_.employeeId 
+    where
+        questions0_.questionId=?
+2019-10-13 14:06:11 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:11 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#3]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#3]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#2]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#2]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:06:11 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Questions#3
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#2]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#4]
+2019-10-13 14:06:11 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_0_,
+        questions0_.categoryId as category4_3_0_,
+        questions0_.date as date2_3_0_,
+        questions0_.employeeId as employee5_3_0_,
+        questions0_.questionDescription as question3_3_0_,
+        category1_.categoryId as category1_1_1_,
+        category1_.categoryName as category2_1_1_,
+        employee2_.employeeId as employee1_2_2_,
+        employee2_.employeeDesignation as employee2_2_2_,
+        employee2_.employeeLocation as employee3_2_2_,
+        employee2_.employeeName as employee4_2_2_,
+        employee2_.password as password5_2_2_,
+        employee2_.username as username6_2_2_ 
+    from
+        questions questions0_ 
+    left outer join
+        category category1_ 
+            on questions0_.categoryId=category1_.categoryId 
+    left outer join
+        employee employee2_ 
+            on questions0_.employeeId=employee2_.employeeId 
+    where
+        questions0_.questionId=?
+2019-10-13 14:06:11 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:11 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:06:11 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Questions#2
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#4]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#5]
+2019-10-13 14:06:11 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#5]
+2019-10-13 14:06:11 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:06:11 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:06:11 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:06:11 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#111], was: [com.vforum.model.Employee.answers#111] (uninitialized)
+2019-10-13 14:06:11 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#111], was: [com.vforum.model.Employee.questions#111] (uninitialized)
+2019-10-13 14:06:11 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#3], was: [com.vforum.model.Questions.answerId#3] (uninitialized)
+2019-10-13 14:06:11 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#2], was: [com.vforum.model.Category.questions#2] (uninitialized)
+2019-10-13 14:06:11 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:06:11 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:06:11 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:06:11 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:06:11 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 9 objects
+2019-10-13 14:06:11 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 8 collections
+2019-10-13 14:06:11 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=bbb, password=111, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=bbb, employeeId=111, employeeDesignation=bbb, username=bbb}
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=2, date=2019-10-13, question=com.vforum.model.Questions#3, employee=com.vforum.model.Employee#111, answerDescription=erkfj}
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=HR, categoryId=2}
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=why this kolaveri?, questionId=3, category=com.vforum.model.Category#2, employee=com.vforum.model.Employee#123}
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=4, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=rkjleerop367}
+2019-10-13 14:06:11 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=5, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=dlkcjs}
+2019-10-13 14:06:11 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:06:11 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:06:11 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:06:11 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:06:18 INFO  AnswerController:133 - This is /deleteanswer Page Log
+2019-10-13 14:06:18 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:06:18 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:06:18 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:06:18 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:06:18 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:06:18 DEBUG SQL:109 - 
+    select
+        answers0_.answerId as answerId1_0_0_,
+        answers0_.answerDescription as answerDe2_0_0_,
+        answers0_.date as date3_0_0_,
+        answers0_.employeeId as employee4_0_0_,
+        answers0_.questionId as question5_0_0_,
+        employee1_.employeeId as employee1_2_1_,
+        employee1_.employeeDesignation as employee2_2_1_,
+        employee1_.employeeLocation as employee3_2_1_,
+        employee1_.employeeName as employee4_2_1_,
+        employee1_.password as password5_2_1_,
+        employee1_.username as username6_2_1_,
+        questions2_.questionId as question1_3_2_,
+        questions2_.categoryId as category4_3_2_,
+        questions2_.date as date2_3_2_,
+        questions2_.employeeId as employee5_3_2_,
+        questions2_.questionDescription as question3_3_2_,
+        category3_.categoryId as category1_1_3_,
+        category3_.categoryName as category2_1_3_,
+        employee4_.employeeId as employee1_2_4_,
+        employee4_.employeeDesignation as employee2_2_4_,
+        employee4_.employeeLocation as employee3_2_4_,
+        employee4_.employeeName as employee4_2_4_,
+        employee4_.password as password5_2_4_,
+        employee4_.username as username6_2_4_ 
+    from
+        answers answers0_ 
+    left outer join
+        employee employee1_ 
+            on answers0_.employeeId=employee1_.employeeId 
+    left outer join
+        questions questions2_ 
+            on answers0_.questionId=questions2_.questionId 
+    left outer join
+        category category3_ 
+            on questions2_.categoryId=category3_.categoryId 
+    left outer join
+        employee employee4_ 
+            on questions2_.employeeId=employee4_.employeeId 
+    where
+        answers0_.answerId=?
+2019-10-13 14:06:18 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:18 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:18 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#5]
+2019-10-13 14:06:18 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#5]
+2019-10-13 14:06:18 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#111]
+2019-10-13 14:06:18 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#111]
+2019-10-13 14:06:18 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:06:18 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:06:18 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:06:18 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:06:18 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:06:18 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:06:18 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Answers#5
+2019-10-13 14:06:18 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:06:18 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:06:18 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:06:18 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#111], was: [com.vforum.model.Employee.answers#111] (uninitialized)
+2019-10-13 14:06:18 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#111], was: [com.vforum.model.Employee.questions#111] (uninitialized)
+2019-10-13 14:06:18 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:06:18 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:06:18 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:06:18 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:06:18 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 5 objects
+2019-10-13 14:06:18 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 6 collections
+2019-10-13 14:06:18 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:06:18 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:06:18 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=5, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=dlkcjs}
+2019-10-13 14:06:18 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=bbb, password=111, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=bbb, employeeId=111, employeeDesignation=bbb, username=bbb}
+2019-10-13 14:06:18 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:06:18 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:06:18 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:06:18 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:06:18 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:06:18 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:06:18 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:06:18 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:06:18 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:06:18 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:06:18 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:06:18 DEBUG SQL:109 - 
+    select
+        employee_.employeeId,
+        employee_.employeeDesignation as employee2_2_,
+        employee_.employeeLocation as employee3_2_,
+        employee_.employeeName as employee4_2_,
+        employee_.password as password5_2_,
+        employee_.username as username6_2_ 
+    from
+        employee employee_ 
+    where
+        employee_.employeeId=?
+2019-10-13 14:06:18 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:06:18 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:06:18 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:06:18 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 1 deletions to 1 objects
+2019-10-13 14:06:18 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2019-10-13 14:06:18 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:06:18 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=5, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=dlkcjs}
+2019-10-13 14:06:18 DEBUG SQL:109 - 
+    delete 
+    from
+        answers 
+    where
+        answerId=?
+2019-10-13 14:06:19 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:06:19 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:06:19 DEBUG JdbcCoordinatorImpl:201 - HHH000420: Closing un-released batch
+2019-10-13 14:06:19 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:06:19 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:06:19 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:06:19 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:06:19 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:06:19 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:06:19 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:06:19 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_,
+        questions0_.categoryId as category4_3_,
+        questions0_.date as date2_3_,
+        questions0_.employeeId as employee5_3_,
+        questions0_.questionDescription as question3_3_ 
+    from
+        questions questions0_
+2019-10-13 14:06:19 DEBUG Loader:952 - Result set row: 0
+2019-10-13 14:06:19 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Questions#2]
+2019-10-13 14:06:19 DEBUG Loader:952 - Result set row: 1
+2019-10-13 14:06:19 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Questions#3]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:06:19 DEBUG SQL:109 - 
+    select
+        category0_.categoryId as category1_1_0_,
+        category0_.categoryName as category2_1_0_ 
+    from
+        category category0_ 
+    where
+        category0_.categoryId=?
+2019-10-13 14:06:19 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:19 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:06:19 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Category#1
+2019-10-13 14:06:19 DEBUG SQL:109 - 
+    select
+        employee0_.employeeId as employee1_2_0_,
+        employee0_.employeeDesignation as employee2_2_0_,
+        employee0_.employeeLocation as employee3_2_0_,
+        employee0_.employeeName as employee4_2_0_,
+        employee0_.password as password5_2_0_,
+        employee0_.username as username6_2_0_ 
+    from
+        employee employee0_ 
+    where
+        employee0_.employeeId=?
+2019-10-13 14:06:19 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:19 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:06:19 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Employee#123
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#3]
+2019-10-13 14:06:19 DEBUG SQL:109 - 
+    select
+        category0_.categoryId as category1_1_0_,
+        category0_.categoryName as category2_1_0_ 
+    from
+        category category0_ 
+    where
+        category0_.categoryId=?
+2019-10-13 14:06:19 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:19 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#2]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#2]
+2019-10-13 14:06:19 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Category#2
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#3]
+2019-10-13 14:06:19 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:06:19 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:06:19 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:06:19 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:06:19 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#3], was: [com.vforum.model.Questions.answerId#3] (uninitialized)
+2019-10-13 14:06:19 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:06:19 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:06:19 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:06:19 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#2], was: [com.vforum.model.Category.questions#2] (uninitialized)
+2019-10-13 14:06:19 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 5 objects
+2019-10-13 14:06:19 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 6 collections
+2019-10-13 14:06:19 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:06:19 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=why this kolaveri?, questionId=3, category=com.vforum.model.Category#2, employee=com.vforum.model.Employee#123}
+2019-10-13 14:06:19 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:06:19 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:06:19 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:06:19 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=HR, categoryId=2}
+2019-10-13 14:06:19 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:06:19 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:06:19 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:06:19 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2019-10-13 14:06:19 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2019-10-13 14:06:19 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2019-10-13 14:06:19 DEBUG AbstractTransactionImpl:160 - begin
+2019-10-13 14:06:19 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2019-10-13 14:06:19 DEBUG JdbcTransaction:71 - disabling autocommit
+2019-10-13 14:06:19 DEBUG SQL:109 - 
+    select
+        answers0_.answerId as answerId1_0_,
+        answers0_.answerDescription as answerDe2_0_,
+        answers0_.date as date3_0_,
+        answers0_.employeeId as employee4_0_,
+        answers0_.questionId as question5_0_ 
+    from
+        answers answers0_
+2019-10-13 14:06:19 DEBUG Loader:952 - Result set row: 0
+2019-10-13 14:06:19 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Answers#2]
+2019-10-13 14:06:19 DEBUG Loader:952 - Result set row: 1
+2019-10-13 14:06:19 DEBUG Loader:1486 - Result row: EntityKey[com.vforum.model.Answers#4]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#2]
+2019-10-13 14:06:19 DEBUG SQL:109 - 
+    select
+        employee0_.employeeId as employee1_2_0_,
+        employee0_.employeeDesignation as employee2_2_0_,
+        employee0_.employeeLocation as employee3_2_0_,
+        employee0_.employeeName as employee4_2_0_,
+        employee0_.password as password5_2_0_,
+        employee0_.username as username6_2_0_ 
+    from
+        employee employee0_ 
+    where
+        employee0_.employeeId=?
+2019-10-13 14:06:19 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:19 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#111]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#111]
+2019-10-13 14:06:19 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Employee#111
+2019-10-13 14:06:19 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_0_,
+        questions0_.categoryId as category4_3_0_,
+        questions0_.date as date2_3_0_,
+        questions0_.employeeId as employee5_3_0_,
+        questions0_.questionDescription as question3_3_0_,
+        category1_.categoryId as category1_1_1_,
+        category1_.categoryName as category2_1_1_,
+        employee2_.employeeId as employee1_2_2_,
+        employee2_.employeeDesignation as employee2_2_2_,
+        employee2_.employeeLocation as employee3_2_2_,
+        employee2_.employeeName as employee4_2_2_,
+        employee2_.password as password5_2_2_,
+        employee2_.username as username6_2_2_ 
+    from
+        questions questions0_ 
+    left outer join
+        category category1_ 
+            on questions0_.categoryId=category1_.categoryId 
+    left outer join
+        employee employee2_ 
+            on questions0_.employeeId=employee2_.employeeId 
+    where
+        questions0_.questionId=?
+2019-10-13 14:06:19 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:19 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#3]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#3]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#2]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#2]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Employee#123]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Employee#123]
+2019-10-13 14:06:19 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Questions#3
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#2]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Answers#4]
+2019-10-13 14:06:19 DEBUG SQL:109 - 
+    select
+        questions0_.questionId as question1_3_0_,
+        questions0_.categoryId as category4_3_0_,
+        questions0_.date as date2_3_0_,
+        questions0_.employeeId as employee5_3_0_,
+        questions0_.questionDescription as question3_3_0_,
+        category1_.categoryId as category1_1_1_,
+        category1_.categoryName as category2_1_1_,
+        employee2_.employeeId as employee1_2_2_,
+        employee2_.employeeDesignation as employee2_2_2_,
+        employee2_.employeeLocation as employee3_2_2_,
+        employee2_.employeeName as employee4_2_2_,
+        employee2_.password as password5_2_2_,
+        employee2_.username as username6_2_2_ 
+    from
+        questions questions0_ 
+    left outer join
+        category category1_ 
+            on questions0_.categoryId=category1_.categoryId 
+    left outer join
+        employee employee2_ 
+            on questions0_.employeeId=employee2_.employeeId 
+    where
+        questions0_.questionId=?
+2019-10-13 14:06:19 DEBUG ResultSetProcessorImpl:127 - Starting ResultSet row #0
+2019-10-13 14:06:19 DEBUG EntityReferenceInitializerImpl:142 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Questions#2]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Questions#2]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:160 - Resolving associations for [com.vforum.model.Category#1]
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Category#1]
+2019-10-13 14:06:19 DEBUG AbstractLoadPlanBasedEntityLoader:208 - Done entity load : com.vforum.model.Questions#2
+2019-10-13 14:06:19 DEBUG TwoPhaseLoad:286 - Done materializing entity [com.vforum.model.Answers#4]
+2019-10-13 14:06:19 DEBUG AbstractTransactionImpl:175 - committing
+2019-10-13 14:06:19 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2019-10-13 14:06:19 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2019-10-13 14:06:19 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#111], was: [com.vforum.model.Employee.answers#111] (uninitialized)
+2019-10-13 14:06:19 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#111], was: [com.vforum.model.Employee.questions#111] (uninitialized)
+2019-10-13 14:06:19 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#3], was: [com.vforum.model.Questions.answerId#3] (uninitialized)
+2019-10-13 14:06:19 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#2], was: [com.vforum.model.Category.questions#2] (uninitialized)
+2019-10-13 14:06:19 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.answers#123], was: [com.vforum.model.Employee.answers#123] (uninitialized)
+2019-10-13 14:06:19 DEBUG Collections:201 - Collection found: [com.vforum.model.Employee.questions#123], was: [com.vforum.model.Employee.questions#123] (uninitialized)
+2019-10-13 14:06:19 DEBUG Collections:201 - Collection found: [com.vforum.model.Questions.answerId#2], was: [com.vforum.model.Questions.answerId#2] (uninitialized)
+2019-10-13 14:06:19 DEBUG Collections:201 - Collection found: [com.vforum.model.Category.questions#1], was: [com.vforum.model.Category.questions#1] (uninitialized)
+2019-10-13 14:06:19 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 8 objects
+2019-10-13 14:06:19 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 8 collections
+2019-10-13 14:06:19 DEBUG EntityPrinter:114 - Listing entities:
+2019-10-13 14:06:19 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=aaa, password=123, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=aaa, employeeId=123, employeeDesignation=aaa, username=aaa}
+2019-10-13 14:06:19 DEBUG EntityPrinter:121 - com.vforum.model.Employee{employeeName=bbb, password=111, answers=<uninitialized>, questions=<uninitialized>, employeeLocation=bbb, employeeId=111, employeeDesignation=bbb, username=bbb}
+2019-10-13 14:06:19 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=IT, categoryId=1}
+2019-10-13 14:06:19 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=2, date=2019-10-13, question=com.vforum.model.Questions#3, employee=com.vforum.model.Employee#111, answerDescription=erkfj}
+2019-10-13 14:06:19 DEBUG EntityPrinter:121 - com.vforum.model.Category{questions=<uninitialized>, categoryName=HR, categoryId=2}
+2019-10-13 14:06:19 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=hii who are u?, questionId=2, category=com.vforum.model.Category#1, employee=com.vforum.model.Employee#123}
+2019-10-13 14:06:19 DEBUG EntityPrinter:121 - com.vforum.model.Questions{answerId=<uninitialized>, date=2019-10-13, questionDescription=why this kolaveri?, questionId=3, category=com.vforum.model.Category#2, employee=com.vforum.model.Employee#123}
+2019-10-13 14:06:19 DEBUG EntityPrinter:121 - com.vforum.model.Answers{answerId=4, date=2019-10-13, question=com.vforum.model.Questions#2, employee=com.vforum.model.Employee#111, answerDescription=rkjleerop367}
+2019-10-13 14:06:19 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2019-10-13 14:06:19 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2019-10-13 14:06:19 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2019-10-13 14:06:19 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
